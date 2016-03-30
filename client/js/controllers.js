@@ -25,7 +25,18 @@ controllers.controller('PallyController', ['$scope', '$rootScope', function($sco
         return temp;
     }
     var reversed = $rootScope.palindrome;
-   var result = $scope.reversePalindrome(reversed);
-   $scope.reversedPally = result;
-   
+    var result = $scope.reversePalindrome(reversed);
+    $scope.reversedPally = result;
+    $scope.para = '';
+    $scope.paraTwo = '';
+    
+    $scope.checker = function () {
+        if (reversed === result) {
+            $scope.para = 'This word is a palindrome';
+        }
+        else {
+            $scope.para = 'This word is not a palindrome';
+        }
+    }
+    $scope.checker();
 }])
